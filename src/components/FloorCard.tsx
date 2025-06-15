@@ -5,11 +5,11 @@ import {
   ChevronDown,
   ChevronUp,
   Phone,
-  MessageCircle,
   Map,
   Building2,
   Users,
 } from "lucide-react";
+import WhatsAppIcon from "./WhatsAppIcon";
 import type { Floor } from "@/data/offices";
 
 interface FloorCardProps {
@@ -94,10 +94,10 @@ export default function FloorCard({
                 </button>
                 <button
                   onClick={() => handleWhatsApp(floor.head.whatsapp)}
-                  className="bg-green-500 hover:bg-green-600 text-white p-2 rounded-lg transition-colors"
+                  className="bg-[#25D366] hover:bg-[#128C7E] text-white p-2 rounded-lg transition-colors"
                   title="WhatsApp"
                 >
-                  <MessageCircle className="h-4 w-4" />
+                  <WhatsAppIcon className="h-4 w-4" />
                 </button>
                 {floor.hasFloorPlan && (
                   <button
