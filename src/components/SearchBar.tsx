@@ -64,7 +64,7 @@ export default function SearchBar({
         <div className="absolute top-full left-0 right-0 mt-1 bg-blue-50 border border-blue-200 rounded-lg p-2 text-sm text-blue-700 shadow-lg z-10">
           <div className="flex items-center gap-2">
             <Search className="h-4 w-4" />
-            <span>Searching for "{query}"</span>
+            <span>Searching for &quot;{query}&quot;</span>
           </div>
         </div>
       )}

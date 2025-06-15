@@ -14,7 +14,6 @@ export default function Home() {
   >([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
-  const [isOnline, setIsOnline] = useState(true);
 
   // Sort floors by level for proper display order
   const sortedFloors = [...floors].sort((a, b) => b.level - a.level);
@@ -60,11 +59,7 @@ export default function Home() {
               </div>
             </div>
             <div className="flex items-center gap-2">
-              {isOnline ? (
-                <Wifi className="h-5 w-5 text-green-500" />
-              ) : (
-                <WifiOff className="h-5 w-5 text-red-500" />
-              )}
+              <Wifi className="h-5 w-5 text-green-500" />
             </div>
           </div>
         </div>

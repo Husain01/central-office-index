@@ -19,8 +19,8 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
           No Results Found
         </h3>
         <p className="text-gray-600 text-sm">
-          No offices or departments match "{query}". Try a different search
-          term.
+          No offices or departments match &quot;{query}&quot;. Try a different
+          search term.
         </p>
       </div>
     );
@@ -30,7 +30,7 @@ export default function SearchResults({ results, query }: SearchResultsProps) {
     <div className="space-y-4">
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
         <h3 className="font-medium text-blue-900 mb-1">
-          Search Results for "{query}"
+          Search Results for &quot;{query}&quot;
         </h3>
         <p className="text-sm text-blue-700">
           Found {results.length} result{results.length !== 1 ? "s" : ""}
