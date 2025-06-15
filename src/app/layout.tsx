@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/General Logo 1447.jpg",
-    shortcut: "/General Logo 1447.jpg",
-    apple: "/General Logo 1447.jpg",
+    icon: "/logo-192x192.jpg",
+    shortcut: "/logo-192x192.jpg",
+    apple: "/logo-192x192.jpg",
   },
   appleWebApp: {
     capable: true,

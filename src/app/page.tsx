@@ -5,6 +5,7 @@ import { Building, Search as SearchIcon, Wifi, WifiOff } from "lucide-react";
 import SearchBar from "@/components/SearchBar";
 import FloorCard from "@/components/FloorCard";
 import SearchResults from "@/components/SearchResults";
+import InstallButton from "@/components/InstallButton";
 import { floors } from "@/data/offices";
 import type { Floor, Office } from "@/data/offices";
 
@@ -67,6 +68,9 @@ export default function Home() {
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-4 py-6">
+        {/* Install Button */}
+        <InstallButton />
+
         {/* Search Section */}
         <div className="mb-8">
           <SearchBar
