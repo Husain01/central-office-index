@@ -20,7 +20,8 @@ export default function InstallButton() {
     const checkStandalone = () => {
       return (
         window.matchMedia("(display-mode: standalone)").matches ||
-        window.navigator.standalone === true
+        ("standalone" in window.navigator &&
+          (window.navigator as { standalone?: boolean }).standalone === true)
       );
     };
 

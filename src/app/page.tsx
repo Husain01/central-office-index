@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Building, Search as SearchIcon, Wifi, WifiOff } from "lucide-react";
+import { Building, Search as SearchIcon, Wifi } from "lucide-react";
 import SearchBar from "@/components/SearchBar";
 import FloorCard from "@/components/FloorCard";
 import SearchResults from "@/components/SearchResults";
