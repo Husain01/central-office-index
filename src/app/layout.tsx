@@ -71,15 +71,41 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              if ('serviceWorker' in navigator) {
+                            if ('serviceWorker' in navigator) {
                 window.addEventListener('load', function() {
                   navigator.serviceWorker.register('/sw.js')
                     .then(function(registration) {
-                      console.log('SW registered: ', registration);
+                      console.log('[App] SW registered successfully');
+                      
+                      // In development, check for updates more frequently
+                      const isDev = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+                      
+                      if (isDev) {
+                        // Check for updates every 3 seconds in development
+                        setInterval(function() {
+                          registration.update();
+                        }, 3000);
+                      }
+                      
+                      // Auto-reload when new version is available
+                      registration.addEventListener('updatefound', function() {
+                        const newWorker = registration.installing;
+                        newWorker.addEventListener('statechange', function() {
+                          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            console.log('[App] New version available, reloading...');
+                            window.location.reload();
+                          }
+                        });
+                      });
                     })
-                    .catch(function(registrationError) {
-                      console.log('SW registration failed: ', registrationError);
+                    .catch(function(error) {
+                      console.log('[App] SW registration failed:', error);
                     });
+                });
+                
+                // Auto-reload when service worker takes control
+                navigator.serviceWorker.addEventListener('controllerchange', function() {
+                  window.location.reload();
                 });
               }
             `,

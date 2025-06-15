@@ -15,13 +15,27 @@ import type { Floor } from "@/data/offices";
 interface FloorCardProps {
   floor: Floor;
   isExpanded?: boolean;
+  onToggleExpanded?: (floorId: string, expanded: boolean) => void;
 }
 
 export default function FloorCard({
   floor,
   isExpanded = false,
+  onToggleExpanded,
 }: FloorCardProps) {
-  const [expanded, setExpanded] = useState(isExpanded);
+  const [internalExpanded, setInternalExpanded] = useState(isExpanded);
+
+  // Use controlled state if parent provides onToggleExpanded, otherwise use internal state
+  const expanded = onToggleExpanded ? isExpanded : internalExpanded;
+
+  const handleToggleExpanded = () => {
+    const newExpanded = !expanded;
+    if (onToggleExpanded) {
+      onToggleExpanded(floor.id, newExpanded);
+    } else {
+      setInternalExpanded(newExpanded);
+    }
+  };
 
   const handleCall = (phone: string) => {
     window.open(`tel:${phone}`, "_self");
@@ -46,7 +60,7 @@ export default function FloorCard({
     <div className="bg-white rounded-lg shadow-md border border-blue-100 overflow-hidden mb-4">
       <div
         className="p-4 cursor-pointer hover:bg-blue-50 transition-colors"
-        onClick={() => setExpanded(!expanded)}
+        onClick={handleToggleExpanded}
       >
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">

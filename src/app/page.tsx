@@ -15,6 +15,9 @@ export default function Home() {
   >([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
+  const [expandedFloors, setExpandedFloors] = useState<Record<string, boolean>>(
+    {}
+  );
 
   // Sort floors by level for proper display order
   const sortedFloors = [...floors].sort((a, b) => b.level - a.level);
@@ -32,6 +35,30 @@ export default function Home() {
     setSearchResults([]);
     setSearchQuery("");
     setIsSearching(false);
+  };
+
+  const handleToggleFloorExpanded = (floorId: string, expanded: boolean) => {
+    setExpandedFloors((prev) => ({
+      ...prev,
+      [floorId]: expanded,
+    }));
+  };
+
+  const handleQuickNavigation = (floorId: string) => {
+    // First expand the floor
+    setExpandedFloors((prev) => ({
+      ...prev,
+      [floorId]: true,
+    }));
+
+    // Then scroll to it with a small delay to allow expansion animation
+    setTimeout(() => {
+      const element = document.getElementById(`floor-${floorId}`);
+      element?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 100);
   };
 
   // Get total office count
@@ -120,15 +147,7 @@ export default function Home() {
                 {sortedFloors.map((floor) => (
                   <button
                     key={floor.id}
-                    onClick={() => {
-                      const element = document.getElementById(
-                        `floor-${floor.id}`
-                      );
-                      element?.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start",
-                      });
-                    }}
+                    onClick={() => handleQuickNavigation(floor.id)}
                     className="text-left p-2 rounded-lg border border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-colors"
                   >
                     <div className="font-medium text-sm text-gray-900">
@@ -149,7 +168,11 @@ export default function Home() {
               </h2>
               {sortedFloors.map((floor) => (
                 <div key={floor.id} id={`floor-${floor.id}`}>
-                  <FloorCard floor={floor} />
+                  <FloorCard
+                    floor={floor}
+                    isExpanded={expandedFloors[floor.id] || false}
+                    onToggleExpanded={handleToggleFloorExpanded}
+                  />
                 </div>
               ))}
             </div>
