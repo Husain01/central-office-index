@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ashara Central Office - MSB
+
+A modern, mobile-first office directory application for Ashara Central Office - MSB, built with Next.js 15 and Tailwind CSS.
+
+## Features
+
+- 📱 **Mobile-First Design** - Optimized for mobile devices with responsive layout
+- 🔍 **Real-Time Search** - Search across all offices, departments, and rooms
+- 📞 **Direct Contact** - Call or WhatsApp floor heads directly
+- 🏢 **Floor Navigation** - Quick navigation between floors with smooth scrolling
+- 💾 **Offline Ready** - Static export for reliable offline functionality
+- ⚡ **Fast Performance** - Optimized for speed and low bandwidth usage
+
+## Office Coverage
+
+The application includes comprehensive coverage of all floors:
+
+- **Basement** - Computer Lab, Activity Room (ITS IVR facilities)
+- **Ground Floor** - Dua Hall, KG A/B, Nursery A/B (Religious and Educational)
+- **First Floor** - PRO, Chemistry Lab, Welfare, Transport (Operational departments)
+- **Second Floor** - Communications, HR, Finance, Procurement (Administrative)
+- **Third Floor** - ITS Office, Development, Allocations (Technical departments)
+- **Fourth Floor** - PMO offices, Conference rooms (Executive level)
+
+## Technology Stack
+
+- **Framework**: Next.js 15 with App Router
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **TypeScript**: Full type safety
+- **Export**: Static site generation for optimal performance
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd central-office-index
+```
+
+2. Install dependencies
+
+```bash
+npm install
+```
+
+3. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+This creates an optimized static export in the `dist` folder, ready for deployment on any static hosting service.
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Browse Floors**: Scroll through all floors to see available offices
+2. **Quick Navigation**: Use the navigation buttons to jump to specific floors
+3. **Search**: Type in the search bar to find specific offices or departments
+4. **Contact Floor Heads**: Click the phone or WhatsApp buttons to contact floor supervisors
+5. **Floor Plans**: Placeholder buttons are ready for future floor plan integration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Future Enhancements
 
-## Deploy on Vercel
+- [ ] Floor plan integration with interactive maps
+- [ ] PWA functionality for app-like experience
+- [ ] Real-time availability status
+- [ ] Employee directory integration
+- [ ] Multi-language support
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This application is designed to be deployed on Vercel's free tier:
+
+1. Connect your GitHub repository to Vercel
+2. The static export configuration ensures optimal performance
+3. Automatic deployments on every commit
+
+## Contributing
+
+To update office information or add new features:
+
+1. Edit the data in `src/data/offices.ts`
+2. Update components in `src/components/` as needed
+3. Test thoroughly before deployment
+
+## Contact
+
+For technical support or feature requests, contact the ITS Development team via the application's directory.
+
+---
+
+Built with ❤️ for Ashara Central Office - MSB
