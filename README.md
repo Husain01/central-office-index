@@ -15,7 +15,7 @@ A modern, mobile-first office directory application for Ashara Central Office - 
 
 The application includes comprehensive coverage of all floors:
 
-- **Basement** - Computer Lab, Activity Room (ITS IVR facilities)
+- **Basement** - Computer Lab, Activity Room (ITS facilities)
 - **Ground Floor** - Dua Hall, KG A/B, Nursery A/B (Religious and Educational)
 - **First Floor** - PRO, Chemistry Lab, Welfare, Transport (Operational departments)
 - **Second Floor** - Communications, HR, Finance, Procurement (Administrative)
