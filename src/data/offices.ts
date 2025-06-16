@@ -25,11 +25,11 @@ export const floors: Floor[] = [
     offices: [
       {
         room: "Computer Lab",
-        department: "ITS IVR",
+        department: "ITS",
       },
       {
         room: "Activity Room",
-        department: "ITS IVR Admin",
+        department: "ITS",
       },
     ],
     head: {
@@ -167,19 +167,19 @@ export const floors: Floor[] = [
     offices: [
       {
         room: "11B",
-        department: "ITS Office",
+        department: "ITS",
       },
       {
         room: "5B",
-        department: "ITS Development",
+        department: "ITS",
       },
       {
         room: "9B",
-        department: "ITS Allocation Male",
+        department: "ITS",
       },
       {
         room: "9A",
-        department: "ITS Allocation Female",
+        department: "ITS",
       },
       {
         room: "8B",
